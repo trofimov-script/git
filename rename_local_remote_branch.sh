@@ -1,9 +1,17 @@
 #!/bin/bash    
-name=test_bar
-org=ru.example
+
+read -p "Enter new name" name
+echo $name
+echo
+echo
+ 
+git branch -m $name
+
+git branch -a
+
 
 flutter create --org $org $name
-cd $name/ 
+cd $name 
 
 flutter pub add dart_code_metrics
 
@@ -254,4 +262,17 @@ flutter clean
 flutter pub get
 flutter pub upgrade
 flutter pub outdated
+
+echo
+echo "     All done!"
+echo
+echo "     $name << name project"
+echo "     $org.$name << id package"
+echo
+echo "     In order to run your application, type:"
+echo
+echo "     $ cd $name"
+echo "     $ flutter run"
+echo
+
 
